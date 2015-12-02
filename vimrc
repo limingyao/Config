@@ -8,13 +8,13 @@
 "                        \_/  |_|_| |_| |_|
 "
 "
-"   This is the personal .vimrc file of Steve Francia.
+"   This is the personal .vimrc file of Elwin.
 "   While much of it is beneficial for general use, I would
 "   recommend picking out the parts you want and understand.
 "
-"   You can find me at http://***.com
+"   You can find me at http://Elwin.top
 "
-"   Copyright 2014 Steve Francia
+"   Copyright 2015 Elwin
 "
 "   Licensed under the Apache License, Version 2.0 (the "License");
 "   you may not use this file except in compliance with the License.
