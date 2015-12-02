@@ -107,6 +107,9 @@
         Plugin 'powerline/fonts'                 " powerline fonts
 
         Plugin 'kien/ctrlp.vim'                  " 杀手级查找文件
+        Plugin 'Lokaltog/vim-easymotion'         " 快速移动
+        Plugin 'kien/rainbow_parentheses.vim'    " 括号匹配高亮
+        Plugin 'terryma/vim-multiple-cursors'    " 多光标操作
 
         Plugin 'tpope/vim-surround'              " 在两端加上、修改、删除匹配的符号
         Plugin 'tpope/vim-sleuth'                " 自动调整expandtab、shiftwidth
@@ -152,8 +155,8 @@
     " }
 
     " Go Lang {
-        ""Plugin 'Blackrush/vim-gocode'
-        "Plugin 'fatih/vim-go'
+        " " Plugin 'Blackrush/vim-gocode'
+        " Plugin 'fatih/vim-go'
     " }
 
     " End of Setup Vundle Support {
@@ -371,11 +374,62 @@
     " }
 
     " CtrlP Setting {
-        map <leader>fp :CtrlPMRU<CR>             " 相当于mru功能, show recently opened files
+        " 运行命令:CtrlP或:CtrlP [starting-directory]来以查找文件模式来启用 ctrlp
+        " 运行命令:CtrlPBuffer或:CtrlPMRU来以查找缓冲或最近打开文件模式来启用 ctrlp
+        " 运行命令CtrlPMixed来查找文件、查找缓冲和最近打开文件混合模式来启动 ctrlp
+
+        " 按<c-f>和<c-b>在三种查找模式中互相切换
+        " 按<c-y>来创建新文件和对应的父目录
+        " 按<c-d>来切换到只查找文件名而不是全路径
+        " 按<c-j>，<c-k>或箭头方向键来移动查找结果列表
+        " 按<c-t>或<c-v>，<c-x>来以新标签或分割窗口的方式来打开文件
+        " 按<c-z>来标识或取消标识文件，然后按<c-o>来打开文件
+        " 按<c-n>，<c-p>来在提示历史中选择下一个/上一个字符串
+
+        let g:ctrlp_map = '<leader>ff'
+        let g:ctrlp_cmd = 'CtrlP'
+
+        " 相当于mru功能, show recently opened files
+        map <leader>fp :CtrlPMRU<cr>
+        set wildignore+=*/tmp/*,*.so,*.swp,*.zip " 列表中忽略这些文件
+
+        let g:ctrlp_working_path_mode=0
+        let g:ctrlp_match_window_bottom=1
+        let g:ctrlp_max_height=15
+        let g:ctrlp_match_window_reversed=0
+        let g:ctrlp_mruf_max=500
+        let g:ctrlp_follow_symlinks=1
     " }
 
     " Whitespace Setting {
         map <leader> <space> :FixWhitespace<cr>  " <leader> + space去掉末尾空格
+    " }
+
+    " Rainbow Parentheses Setting {
+        let g:rbpt_colorpairs = [
+            \ ['brown',       'RoyalBlue3'],
+            \ ['Darkblue',    'SeaGreen3'],
+            \ ['darkgray',    'DarkOrchid3'],
+            \ ['darkgreen',   'firebrick3'],
+            \ ['darkcyan',    'RoyalBlue3'],
+            \ ['darkred',     'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['brown',       'firebrick3'],
+            \ ['gray',        'RoyalBlue3'],
+            \ ['black',       'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['Darkblue',    'firebrick3'],
+            \ ['darkgreen',   'RoyalBlue3'],
+            \ ['darkred',     'DarkOrchid3'],
+            \ ['darkcyan',    'SeaGreen3'],
+            \ ['red',         'firebrick3'],
+            \ ]
+        let g:rbpt_max=16
+        let g:rbpt_loadcmd_toggle=0
+        au VimEnter * RainbowParenthesesToggle
+        au Syntax * RainbowParenthesesLoadRound
+        au Syntax * RainbowParenthesesLoadSquare
+        au Syntax * RainbowParenthesesLoadBraces
     " }
 " }
 
