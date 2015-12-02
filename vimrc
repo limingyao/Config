@@ -6,7 +6,7 @@
 "                      \ \ / /| | '_ ` _ \
 "                       \ V / | | | | | | |
 "                        \_/  |_|_| |_| |_|
-"        
+"
 "
 "   This is the personal .vimrc file of Steve Francia.
 "   While much of it is beneficial for general use, I would
@@ -105,7 +105,7 @@
         Plugin 'majutsushi/tagbar'               " 标签导航,显示名字空间、类、函数等
         Plugin 'mhinz/vim-startify'              " 更改VIM开始界面插件,启动VIM可以看到一些快捷方式
         Plugin 'powerline/fonts'                 " powerline fonts
-        
+
         Plugin 'kien/ctrlp.vim'                  " 杀手级查找文件
 
         Plugin 'tpope/vim-surround'              " 在两端加上、修改、删除匹配的符号
@@ -121,7 +121,7 @@
         Plugin 'godlygeek/tabular'               " 代码对齐
         "Plugin 'nathanaelkane/vim-indent-guides' " 可视化缩进
         Plugin 'Yggdroot/indentLine'             " 可视化缩进
-        
+
         Plugin 'altercation/vim-colors-solarized' " 主题 solarized
         Plugin 'tomasr/molokai'                   " 主题 molokai
         Plugin 'flazz/vim-colorschemes'           " colorschemes
@@ -244,12 +244,12 @@
             let g:solarized_contrast='normal'
             let g:solarized_visibility='normal'
         " }
-        
+
         " Molokai {
            let g:molokai_original = 1
            " let g:rehash256 = 1
         " }
-        
+
         " 配色方案 {
             set background=dark
             set t_Co=256
@@ -283,7 +283,7 @@
     " Be smart when using tabs ;)
     set smarttab
     " 将已存在的tab都转化为空格
-    %retab! 
+    %retab!
 
     set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
     set splitright                  " Puts new vsplit windows to the right of the current
@@ -333,7 +333,7 @@
         " tabline中buffer显示编号
         let g:airline#extensions#tabline#buffer_nr_show = 1
     " }
-    
+
     " Nerdtree Setting {
         " 控制当光标移动超过一定距离时，是否自动将焦点调整到屏中心
         let NERDTreeAutoCenter=1
@@ -357,14 +357,14 @@
         " 不显示的文件
         let NERDTreeIgnore=['\.o$', '\.ko$', '\.symvers$', '\.order$', '\.mod.c$', '\.swp$', '\.bak$', '\~$']
     " }
-    
+
     " Tagbar Setting {
         nnoremap <silent> <F3> :TagbarToggle<CR>
         let g:tagbar_width=30
         " 设置tagbar默认打开(大屏幕显示器可以打开)
         autocmd VimEnter * nested TagbarOpen
     " }
-    
+
     " IndentLine Setting {
         let g:indentLine_char = '¦'
         let g:indentLine_color_term = 239
