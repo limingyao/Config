@@ -356,7 +356,7 @@
         " 快捷键F2打开,q退出
         nnoremap <silent> <F2> :NERDTree<CR>
         " 关闭vim时，如果打开的文件除了NERDTree没有其他文件时，它自动关闭
-        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
         " 打开vim时自动打开NERDTree
         autocmd vimenter * NERDTree
         " 打开VIM后默认进入右侧编辑区
