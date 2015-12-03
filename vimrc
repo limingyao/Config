@@ -107,45 +107,58 @@
         Plugin 'powerline/fonts'                 " powerline fonts
 
         Plugin 'kien/ctrlp.vim'                  " 杀手级查找文件
-        Plugin 'Lokaltog/vim-easymotion'         " 快速移动
         Plugin 'kien/rainbow_parentheses.vim'    " 括号匹配高亮
+        Plugin 'Lokaltog/vim-easymotion'         " 快速移动
         Plugin 'terryma/vim-multiple-cursors'    " 多光标操作
 
-        Plugin 'tpope/vim-surround'              " 在两端加上、修改、删除匹配的符号
         Plugin 'tpope/vim-sleuth'                " 自动调整expandtab、shiftwidth
-        Plugin 'sjl/gundo.vim'                   " 像版本控制一样使用编辑中undo功能
-        "Plugin 'ludovicchabant/vim-lawrencium'   " Mercurial分布式版本控制系统
-        Plugin 'mhinz/vim-signify'               " 用符号来表示添加、修改和删除
         Plugin 'tyru/open-browser.vim'           " 用浏览器打开URI
         Plugin 'justinmk/vim-sneak'              " 定位
         Plugin 'elzr/vim-json'                   " Json
         Plugin 'edsono/vim-matchit'              " 扩展了%匹配字符的范围
-        "Plugin 'vim-scripts/TaskList.vim'        " 用于标记代码,任务
-        Plugin 'godlygeek/tabular'               " 代码对齐
-        "Plugin 'nathanaelkane/vim-indent-guides' " 可视化缩进
-        Plugin 'Yggdroot/indentLine'             " 可视化缩进
+    " }
 
+    " Schemes {
         Plugin 'altercation/vim-colors-solarized' " 主题 solarized
         Plugin 'tomasr/molokai'                   " 主题 molokai
         Plugin 'flazz/vim-colorschemes'           " colorschemes
     " }
 
     " Writing {
-        Plugin 'plasticboy/vim-markdown'         " markdown高亮
+        Plugin 'vim-scripts/TaskList.vim'        " 用于标记代码,任务
         Plugin 'bronson/vim-trailing-whitespace' " 去掉末尾无效空格
+
+        Plugin 'plasticboy/vim-markdown'         " markdown高亮
+
+        Plugin 'Yggdroot/indentLine'             " 可视化缩进
+
+        Plugin 'sjl/gundo.vim'                   " 像版本控制一样使用编辑中undo功能
+
+        Plugin 'airblade/vim-gitgutter'          " 显示git diff
+        " Plugin 'mhinz/vim-signify'               " 用符号来表示添加、修改和删除
+        "Plugin 'ludovicchabant/vim-lawrencium'   " Mercurial分布式版本控制系统
     " }
 
     " General Programming {
-        Plugin 'scrooloose/syntastic'            " 语法检查
-        Plugin 'vim-scripts/a.vim'               " cpp <-> h
-        Plugin 'klen/python-mode'                " Python
         Plugin 'scrooloose/nerdcommenter'        " 批量注释与反注释
+
+        Plugin 'scrooloose/syntastic'            " 语法检查
+        Plugin 'vim-scripts/a.vim'               " *.cpp和*.h之间切换
     " }
 
     " Snippets & AutoComplete {
-        "Plugin 'honza/vim-snippets'              " 代码片段补全
-        Plugin 'SirVer/ultisnips'                " 代码片段补全
+        Plugin 'SirVer/ultisnips'                " 代码片段补全, Track the engine.
+        Plugin 'honza/vim-snippets'              " 代码片段补全补充, Snippets are separated from the engine.
+
         "Plugin 'Valloric/YouCompleteMe'          " 自动补全
+        Plugin 'godlygeek/tabular'               " 代码对齐
+
+        Plugin 'tpope/vim-surround'              " 在两端加上、修改、删除匹配的符号
+        Plugin 'tpope/vim-repeat'                " vim-surround补充, 增强版命令重复
+    " }
+
+    " Python {
+        " Plugin 'klen/python-mode'                " Python
     " }
 
     " Scala {
@@ -430,6 +443,62 @@
         au Syntax * RainbowParenthesesLoadRound
         au Syntax * RainbowParenthesesLoadSquare
         au Syntax * RainbowParenthesesLoadBraces
+    " }
+
+    " EasyMotion Setting {
+        let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+        " Bi-directional find motion
+        " Jump to anywhere you want with minimal keystrokes, with just one key binding.
+        " `s{char}{label}`
+        nmap s <Plug>(easymotion-s)
+        " or
+        " `s{char}{char}{label}`
+        " Need one more keystroke, but on average, it may be more comfortable.
+        nmap s <Plug>(easymotion-s2)
+
+        " Turn on case insensitive feature
+        let g:EasyMotion_smartcase = 1
+
+        " JK motions: Line motions
+        map <Leader>j <Plug>(easymotion-j)
+        map <Leader>k <Plug>(easymotion-k)
+    " }
+
+    " UltiSnips Setting {
+        " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+        let g:UltiSnipsExpandTrigger="<tab>"
+        let g:UltiSnipsJumpForwardTrigger="<c-b>"
+        let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+        " If you want :UltiSnipsEdit to split your window.
+        let g:UltiSnipsEditSplit="vertical"
+
+        "let g:UltiSnipsSnippetDirectories=["snippets", "bundle/vim-snippets/UltiSnips"]
+    " }
+
+    " Tabular String {
+        " 按=号对齐代码 [Tabular插件]
+        nmap <leader>bb :Tab /=<CR>
+        " 自定义对齐    [Tabular插件]
+        " nmap <leader>bn :Tab /
+    " }
+
+    " TaskList Setting {
+        map <leader>td <Plug>TaskList
+    " }
+
+    " Multiple Cursors Settiung {
+        let g:multi_cursor_use_default_mapping=0
+        " Default mapping
+        let g:multi_cursor_next_key='<C-n>'
+        let g:multi_cursor_prev_key='<C-p>'
+        let g:multi_cursor_skip_key='<C-x>'
+        let g:multi_cursor_quit_key='<Esc>'
+    " }
+
+    " Gundo Setting {
+        nnoremap <leader>h :GundoToggle<CR>
     " }
 " }
 
