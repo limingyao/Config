@@ -108,14 +108,7 @@
 
         Plugin 'kien/ctrlp.vim'                  " 杀手级查找文件
         Plugin 'kien/rainbow_parentheses.vim'    " 括号匹配高亮
-        Plugin 'Lokaltog/vim-easymotion'         " 快速移动
         Plugin 'terryma/vim-multiple-cursors'    " 多光标操作
-
-        Plugin 'tpope/vim-sleuth'                " 自动调整expandtab、shiftwidth
-        Plugin 'tyru/open-browser.vim'           " 用浏览器打开URI
-        Plugin 'justinmk/vim-sneak'              " 定位
-        Plugin 'elzr/vim-json'                   " Json
-        Plugin 'edsono/vim-matchit'              " 扩展了%匹配字符的范围
     " }
 
     " Schemes {
@@ -125,10 +118,15 @@
     " }
 
     " Writing {
+        Plugin 'Lokaltog/vim-easymotion'         " 快速移动
+        " Plugin 'justinmk/vim-sneak'              " 快速移动
+
         Plugin 'vim-scripts/TaskList.vim'        " 用于标记代码,任务
         Plugin 'bronson/vim-trailing-whitespace' " 去掉末尾无效空格
 
-        Plugin 'plasticboy/vim-markdown'         " markdown高亮
+        "Plugin 'plasticboy/vim-markdown'         " markdown高亮
+
+        "Plugin 'elzr/vim-json'                   " Json
 
         Plugin 'Yggdroot/indentLine'             " 可视化缩进
 
@@ -141,9 +139,10 @@
 
     " General Programming {
         Plugin 'scrooloose/nerdcommenter'        " 批量注释与反注释
+        Plugin 'tpope/vim-sleuth'                " 自动调整expandtab、shiftwidth
 
-        Plugin 'scrooloose/syntastic'            " 语法检查
-        Plugin 'vim-scripts/a.vim'               " *.cpp和*.h之间切换
+        "Plugin 'scrooloose/syntastic'            " 语法检查
+        "Plugin 'vim-scripts/a.vim'               " *.cpp和*.h之间切换
     " }
 
     " Snippets & AutoComplete {
@@ -230,10 +229,6 @@
     " 设置光标所在列阴影高亮
     set cursorcolumn
 
-    highlight clear SignColumn      " SignColumn should match background
-    highlight clear LineNr          " Current line number row will have same background color in relative mode
-    " highlight clear CursorLineNr    " Remove highlight color from current line number
-
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra spaces between rows
     set number                      " Line numbers on
@@ -246,11 +241,9 @@
     set wildmenu                    " Show list instead of just completing
     set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
-    set scrolljump=5                " Lines to scroll when cursor leaves screen
-    set scrolloff=3                 " Minimum lines to keep above and below cursor
-    set foldenable                  " Auto fold code
-    " set list
-    " set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    " set scrolljump=5                " Lines to scroll when cursor leaves screen
+    " set scrolloff=3                 " Minimum lines to keep above and below cursor
+    " set foldenable                  " Auto fold code
 
     " Schemes Setting {
         syntax enable
@@ -290,16 +283,15 @@
     set autoindent                  " Indent at the same level of the previous line
     set smartindent
 
-    " Tab设置
-    " 1 tab == 4 spaces
-    set shiftwidth=4                " Use indents of 4 spaces
-    set expandtab                   " Tabs are spaces, not tabs
-    set tabstop=4                   " An indentation every four columns
-    set softtabstop=4               " Let backspace delete indent
-    " Be smart when using tabs ;)
-    set smarttab
-    " 将已存在的tab都转化为空格
-    %retab!
+    " Tab设置 {
+        " 1 tab == 4 spaces
+        set shiftwidth=4                " Use indents of 4 spaces
+        set expandtab                   " Tabs are spaces, not tabs
+        set tabstop=4                   " An indentation every four columns
+        set softtabstop=4               " Let backspace delete indent
+        set smarttab                    " Be smart when using tabs ;)
+        %retab!                         " 将已存在的tab都转化为空格
+    " }
 
     set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
     set splitright                  " Puts new vsplit windows to the right of the current
@@ -543,4 +535,3 @@
     " e.g. Grep current file for <search_term>: Shell grep -Hn <search_term> %
     " }
 " }
-
