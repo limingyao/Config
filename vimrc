@@ -1,12 +1,10 @@
 " Modeline and Notes {
-" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
-"
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
 "                              _
 "                      __   __(_)_ __ ___
 "                      \ \ / /| | '_ ` _ \
 "                       \ V / | | | | | | |
 "                        \_/  |_|_| |_| |_|
-"
 "
 "   This is the personal .vimrc file of Elwin.
 "   While much of it is beneficial for general use, I would
@@ -124,9 +122,9 @@
         Plugin 'vim-scripts/TaskList.vim'        " 用于标记代码,任务
         Plugin 'bronson/vim-trailing-whitespace' " 去掉末尾无效空格
 
-        "Plugin 'plasticboy/vim-markdown'         " markdown高亮
+        Plugin 'plasticboy/vim-markdown'         " markdown高亮
 
-        "Plugin 'elzr/vim-json'                   " Json
+        Plugin 'elzr/vim-json'                   " Json
 
         Plugin 'Yggdroot/indentLine'             " 可视化缩进
 
@@ -299,11 +297,11 @@
     " set matchpairs+=<:>             " Match, to be used with %
     set pastetoggle=<F4>            " pastetoggle (sane indentation on pastes),插入模式下按 F9进入粘贴模式
     " set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+
     " Remove trailing whitespaces and ^M chars
-    " To disable the stripping of whitespace, add the following to your
-    " .vimrc.before.local file:
-    "   let g:spf13_keep_trailing_whitespace = 1
-    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    " To disable the stripping of whitespace, add the following line:
+    " let g:keep_trailing_whitespace = 1
+    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
 
     " autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
