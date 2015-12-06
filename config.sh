@@ -5,19 +5,28 @@ HOME_DIR=$HOME
 DATE=$(date +%Y%m%d_%H%M%S)
 TIME_STAMP=$(date +%s)
 
-BASH_DIR='bash'
-NPM_DIR='npm'
-TMUX_DIR='tmux'
-VIM_DIR='vim'
-ZSH_DIR='zsh'
 
-#echo $BASE_DIR
-#echo $HOME_DIR
-#echo $DATE
-#echo $TIME_STAMP
+function is_link()
+{
+	local file_path=$1
+	local tmp_string=$(ls -l ${file_path})
+	local symbol=${tmp_string:0:1}
+	if [ $symbol == 'l' ];then
+		return 1
+	fi
+	return 0
+}
 
-#echo $BASH_DIR
-#echo $NPM_DIR
-#echo $TMUX_DIR
-#echo $VIM_DIR
-#echo $ZSH_DIR
+function preprocessing()
+{
+	local file_path=$1
+	if [ -e ${file_path} ];then
+		is_link ${file_path}
+		if [ $? -eq 1 ];then
+			rm ${file_path}
+		else
+			mv ${file_path} ${file_path}"."${TIME_STAMP}
+		fi
+	fi
+}
+

@@ -1,16 +1,12 @@
 #!/bin/bash
 
 BASE=$(cd $(dirname $0) && pwd)
-source ${BASE}"/config.sh"
+CONFIG_FILE='config.sh'
+source ${BASE}"/"${CONFIG_FILE}
 
-echo ${BASE_DIR}
-echo ${HOME_DIR}
-echo ${DATE}
-echo ${TIME_STAMP}
+preprocessing ${HOME_DIR}"/.bashrc"
+ln -s ${BASE_DIR}"/bash/bashrc" ${HOME_DIR}"/.bashrc"
 
-echo ${BASH_DIR}
-echo ${NPM_DIR}
-echo ${TMUX_DIR}
-echo ${VIM_DIR}
-echo ${ZSH_DIR}
+preprocessing ${HOME_DIR}"/.bash_profile"
+ln -s ${BASE_DIR}"/bash/bash_profile" ${HOME_DIR}"/.bash_profile"
 
