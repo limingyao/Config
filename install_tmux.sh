@@ -1,11 +1,9 @@
 #!/bin/bash
 
-BASE_DIR=$(cd $(dirname $0) && pwd)
-HOME_DIR=$HOME
-DATE=$(date +%Y%m%d_%H%M%S)
-TIME_STAMP=$(date +%s)
+BASE=$(cd $(dirname $0) && pwd)
+CONFIG_FILE='config.sh'
+source ${BASE}"/"${CONFIG_FILE}
 
-echo $BASE_DIR
-echo $HOME_DIR
-echo $DATE
-echo $TIME_STAMP
+preprocessing ${HOME_DIR}"/.tmux.conf"
+ln -s ${BASE_DIR}"/tmux/tmux.conf" ${HOME_DIR}"/.tmux.conf"
+
