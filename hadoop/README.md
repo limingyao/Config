@@ -1,4 +1,5 @@
-export HADOOP_HOME=/home/limingyao/hadoop-2.6.3
+export HADOOP_INSTALL=/home/limingyao/hadoop-2.6.3
+export HADOOP_HOME=$HADOOP_INSTALL
 export HADOOP_PREFIX=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_COMMON_HOME=$HADOOP_HOME
