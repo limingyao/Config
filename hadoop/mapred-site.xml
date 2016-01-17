@@ -38,4 +38,14 @@
         <value>0.0.0.0:10033</value>
         <description>The address of the History server admin interface.</description>
     </property>
+    <property>
+        <name>mapreduce.jobhistory.intermediate-done-dir</name>
+        <value>/mr-history/tmp</value>
+        <description>Directory where history files are written by MapReduce jobs.</description>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.done-dir</name>
+        <value>/mr-history/done</value>
+        <description>Directory where history files are managed by the MR JobHistory Server.</description>
+    </property>
 </configuration>
