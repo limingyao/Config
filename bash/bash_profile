@@ -6,7 +6,34 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
+export PATH=$HOME/.local/bin:$PATH
 
-PATH=$PATH:$HOME/.local/bin
+export JAVA_HOME=/home/limingyao/.local/jdk
+export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/jre/lib/dt.jar 
+export PATH=$JAVA_HOME/bin:$PATH
 
-export PATH
+export GIT_HOME=/home/limingyao/.local/git
+export PATH=$GIT_HOME/bin:$PATH
+
+export ANT_HOME=/home/limingyao/.local/ant
+export PATH=$ANT_HOME/bin:$PATH
+
+export MAVEN_HOME=/home/limingyao/.local/maven
+export PATH=$MAVEN_HOME/bin:$PATH
+
+export PYTHON_HOME=/home/limingyao/.local/python
+export PATH=$PYTHON_HOME/bin:$PATH
+
+export HADOOP_INSTALL=/home/limingyao/.local/hadoop
+export HADOOP_HOME=$HADOOP_INSTALL
+export HADOOP_PREFIX=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_YARN_HOME=$HADOOP_HOME
+export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
+
+export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH

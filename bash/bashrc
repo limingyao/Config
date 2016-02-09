@@ -11,3 +11,11 @@ fi
 # User specific aliases and functions
 
 shopt -s nocaseglob
+
+alias l='ls -alF'
+alias ll='ls -l'
+alias la='ls -alF'
+
+alias start-cluster='cd /home/limingyao/.local/hadoop && ./sbin/start-dfs.sh && ./sbin/start-yarn.sh && ./sbin/yarn-daemon.sh start proxyserver && ./sbin/mr-jobhistory-daemon.sh start historyserver'
+alias stop-cluster='cd /home/limingyao/.local/hadoop && ./sbin/stop-yarn.sh && ./sbin/mr-jobhistory-daemon.sh stop historyserver && ./sbin/stop-dfs.sh'
+

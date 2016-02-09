@@ -10,3 +10,5 @@ ln -s ${BASE_DIR}"/bash/bashrc" ${HOME_DIR}"/.bashrc"
 preprocessing ${HOME_DIR}"/.bash_profile"
 ln -s ${BASE_DIR}"/bash/bash_profile" ${HOME_DIR}"/.bash_profile"
 
+preprocessing ${HOME_DIR}"/.inputrc"
+ln -s ${BASE_DIR}"/bash/inputrc" ${HOME_DIR}"/.inputrc"
