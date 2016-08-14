@@ -52,7 +52,7 @@ plugins=(git autojump)
 
 #export PATH="/usr/lib64/qt-3.3/bin:/opt/cmake/bin:/opt/protobuf/bin:/opt/git/bin:/opt/ant/bin:/opt/maven/bin:/opt/mongodb/bin:/opt/python/bin:/opt/sbt/bin:/opt/scala/bin:/opt/java/jdk1.7.0_65/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/thrift/bin:/opt/nexus/nexus-2.11.0-02/bin:/home/Elwin/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH=/home/Elwin/.local/bin:$PATH
+export PATH=${HOME}/.local/bin:$PATH
 export EDITOR=/usr/bin/vim
 
 source $ZSH/oh-my-zsh.sh
@@ -105,4 +105,4 @@ alias -s bz2='tar -xjvf'
 
 ulimit -c unlimited
 
-[[ -s /home/Elwin/.autojump/etc/profile.d/autojump.sh ]] && source /home/Elwin/.autojump/etc/profile.d/autojump.sh
+[[ -s ${HOME}/.autojump/etc/profile.d/autojump.sh ]] && source ${HOME}/.autojump/etc/profile.d/autojump.sh
