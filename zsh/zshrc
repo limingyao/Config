@@ -50,8 +50,6 @@ plugins=(git autojump)
 
 # User configuration
 
-#export PATH="/usr/lib64/qt-3.3/bin:/opt/cmake/bin:/opt/protobuf/bin:/opt/git/bin:/opt/ant/bin:/opt/maven/bin:/opt/mongodb/bin:/opt/python/bin:/opt/sbt/bin:/opt/scala/bin:/opt/java/jdk1.7.0_65/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/thrift/bin:/opt/nexus/nexus-2.11.0-02/bin:/home/Elwin/.local/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
 export PATH=${HOME}/.local/bin:$PATH
 export EDITOR=/usr/bin/vim
 
@@ -102,6 +100,9 @@ alias -s gz='tar -xzvf' #自动解压后缀为gz的压缩包
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
+
+# 导入其它配置
+source ${HOME}/.local/etc/servers.sh
 
 ulimit -c unlimited
 
