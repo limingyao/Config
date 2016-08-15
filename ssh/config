@@ -1,0 +1,7 @@
+# 保持与服务器的连接
+ServerAliveInterval 60
+
+# 支持会话克隆
+Host *
+ControlMaster auto
+ControlPath ~/.ssh/socket-%r@%h:%p
