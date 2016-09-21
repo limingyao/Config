@@ -9,7 +9,7 @@ fi
 export PATH=$HOME/.local/bin:$PATH
 
 export JAVA_HOME=/home/limingyao/.local/jdk
-export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/jre/lib/dt.jar 
+export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
 export PATH=$JAVA_HOME/bin:$PATH
 
 export GIT_HOME=/home/limingyao/.local/git
