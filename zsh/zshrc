@@ -51,7 +51,7 @@ plugins=(git autojump)
 # User configuration
 
 export PATH=${HOME}/.local/bin:$PATH
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
 export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar

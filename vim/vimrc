@@ -314,6 +314,8 @@
     autocmd FileType haskell setlocal commentstring=--\ %s
     " Workaround broken colour highlighting in Haskell
     autocmd FileType haskell,rust setlocal nospell
+    " Workaround for crontab of Mac OSX
+    autocmd filetype crontab setlocal nobackup nowritebackup
 " }
 
 " Key (re)Mappings {
