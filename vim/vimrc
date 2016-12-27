@@ -144,8 +144,8 @@
     " }
 
     " Snippets & AutoComplete {
-        Plugin 'SirVer/ultisnips'                " 代码片段补全, Track the engine.
-        Plugin 'honza/vim-snippets'              " 代码片段补全补充, Snippets are separated from the engine.
+        "~Plugin 'SirVer/ultisnips'                " 代码片段补全, Track the engine.
+        "~Plugin 'honza/vim-snippets'              " 代码片段补全补充, Snippets are separated from the engine.
 
         "Plugin 'Valloric/YouCompleteMe'          " 自动补全
         Plugin 'godlygeek/tabular'               " 代码对齐
@@ -459,12 +459,12 @@
 
     " UltiSnips Setting {
         " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-        let g:UltiSnipsExpandTrigger="<tab>"
-        let g:UltiSnipsJumpForwardTrigger="<c-b>"
-        let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+        "~let g:UltiSnipsExpandTrigger="<tab>"
+        "~let g:UltiSnipsJumpForwardTrigger="<c-b>"
+        "~let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
         " If you want :UltiSnipsEdit to split your window.
-        let g:UltiSnipsEditSplit="vertical"
+        "~let g:UltiSnipsEditSplit="vertical"
 
         "let g:UltiSnipsSnippetDirectories=["snippets", "bundle/vim-snippets/UltiSnips"]
     " }
