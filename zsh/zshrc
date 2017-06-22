@@ -60,9 +60,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 export WORKON_HOME=/Users/limingyao/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-export JSTORM_HOME=/Users/limingyao/.local/opt/jstorm/2.2.1
-export PATH=$PATH:$JSTORM_HOME/bin
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
