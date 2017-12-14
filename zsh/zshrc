@@ -49,10 +49,10 @@ ENABLE_CORRECTION="true"
 plugins=(git autojump)
 
 # User configuration
-export PATH=${HOME}/.local/bin:$PATH
+export PATH=${HOME}/.local/bin:/usr/local/bin:$PATH
 export EDITOR=/usr/local/bin/vim
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
 export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
 export PATH=$JAVA_HOME/bin:$PATH
 
@@ -60,6 +60,8 @@ export WORKON_HOME=/Users/limingyao/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
 source $ZSH/oh-my-zsh.sh
+
+export LD_LIBRARY_PATH=/Users/limingyao/.local/lib:$LD_LIBRARY_PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
